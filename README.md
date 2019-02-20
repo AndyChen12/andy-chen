@@ -11,4 +11,4 @@ TipView
 			    .addTipView(findViewById(R.id.textView4), "新增功能这是个很长很长的不知道啥玩意啊？你说到底多长呢，这可咋整呢？")
 			    .showTip();
 			    
-![image](https://github.com/)
+![image](https://github.com/andy-chen/9c1jb-29ih1.gif)
