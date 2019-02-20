@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--全局统一的主题，去掉actionbar，定制状态栏和标题栏同色-->
+    <style name="CustomAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimaryDark">#3C394B</item>
+        <item name="colorAccent">#f59425</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:buttonStyle">@style/NoAllCapsButtonStyle</item>
+        <item name="android:windowAnimationStyle">@style/SlideInOutAnimation</item>
+    </style>
+    <style name="NoAllCapsButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="SlideInOutAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item><!--表示上一个activity返回进入效果 比如有俩个activity A与B  B在最上面，B退出(finish)后 A重新进入的效果-->
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item><!--表示的是activity finish()之后的效果 比如有俩个activity A与B B退出后会被finish() 那么B的退出效果在这定义-->
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item><!--一个activity创建进入的效果-->
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item><!--一个activity还没有finish()下退出效果, 比如有俩个activity A与B 首先启动A 然后再启动B 那么A还没有finish()  这时A的退出效果-->
+    </style>
+    <style name="NoWindowBgTheme" parent="CustomAppTheme">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <declare-styleable name="GuidanceRippleView">
+        <!--最大波纹圈数-->
+        <attr name="grvCount" format="integer"/>
+        <!--两个波纹圈之间距离间隔-->
+        <attr name="grvSpace" format="dimension"/>
+        <!--每秒波纹动画帧数， 默认是48帧。标准的电影动画帧数是24帧-->
+        <attr name="grvSpeed" format="integer"/>
+        <!--每一个波纹圈的颜色，格式如：{#008577, #D81B60, #00574B}-->
+        <attr name="grvColors" format="string"/>
+        <!--是否开启自动播放-->
+        <attr name="grvAutoRun" format="boolean"/>
+    </declare-styleable>
+</resources>
